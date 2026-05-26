@@ -1,0 +1,167 @@
+@font-face {
+    font-family: "Helix Heading";
+    src: url("./fonts/Space_Grotesk/static/SpaceGrotesk-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Helix Heading";
+    src: url("./fonts/Space_Grotesk/static/SpaceGrotesk-SemiBold.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Helix Body";
+    src: url("./fonts/Inter/static/Inter_24pt-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Helix Body";
+    src: url("./fonts/Inter/static/Inter_24pt-Medium.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Helix Body";
+    src: url("./fonts/Inter/static/Inter_24pt-SemiBold.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    --color-primary: #0f4c5c;
+    --color-secondary: #7fd1ae;
+    --color-accent: #f5f1e8;
+    --color-background: #f5f1e8;
+    --color-surface: #ffffff;
+    --color-surface-soft: #edf7f2;
+    --color-border: rgba(15, 76, 92, 0.14);
+    --color-text: #17363f;
+    --color-text-muted: #58727a;
+
+    --font-heading: "Helix Heading", Arial, sans-serif;
+    --font-body: "Helix Body", Arial, sans-serif;
+
+    --container-width: min(1120px, calc(100% - 2rem));
+    --section-spacing: clamp(4rem, 8vw, 7rem);
+    --radius-xs: 8px;
+}
+
+* {
+    box-sizing: border-box;
+    outline: none;
+    scroll-behavior: smooth;
+}
+
+img,
+button,
+iframe,
+a {
+    user-select: none;
+}
+
+
+html {
+    background-color: var(--color-background);
+}
+
+body {
+    margin: 0;
+    background-color: var(--color-background);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--color-primary);
+    font-family: var(--font-heading);
+    font-weight: 600;
+    line-height: 1.1;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.faq-panel {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    padding-bottom: 0;
+    transition: max-height 0.35s ease, opacity 0.25s ease, padding-bottom 0.35s ease;
+    will-change: max-height, opacity;
+}
+
+.faq-panel.is-open {
+    opacity: 1;
+    padding-bottom: 1.5rem;
+}
+
+.faq-icon {
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.helix-theme {
+    background:
+        radial-gradient(circle at top right, rgba(127, 209, 174, 0.18), transparent 26%),
+        #f5f1e8;
+}
+
+.helix-theme .bg-\[var\(--color-surface\)\] {
+    background-color: var(--color-surface-soft) !important;
+}
+
+.helix-theme .bg-white,
+.helix-theme article,
+.helix-theme .faq-item,
+.helix-theme #countdown-timer > div,
+.helix-theme #email-gate > .relative {
+    border-radius: 8px;
+}
+
+.helix-theme .inline-flex.min-w-\[240px\],
+.helix-theme #email-gate-form button {
+    background-color: var(--color-primary) !important;
+    border-radius: 8px !important;
+}
+
+.helix-theme .product-link,
+.helix-theme #email-gate-input,
+.helix-theme #email-gate-close {
+    border-radius: 8px !important;
+}
+
+.helix-theme .text-\[var\(--color-accent\)\] {
+    color: var(--color-secondary) !important;
+}
+
+.helix-theme .text-\[var\(--color-primary\)\],
+.helix-theme svg,
+.helix-theme .faq-icon {
+    color: var(--color-primary) !important;
+}

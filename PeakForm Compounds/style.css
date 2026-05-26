@@ -1,0 +1,203 @@
+@font-face {
+    font-family: "PeakForm Heading";
+    src: url("./fonts/Oswald/static/Oswald-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "PeakForm Heading";
+    src: url("./fonts/Oswald/static/Oswald-SemiBold.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "PeakForm Body";
+    src: url("./fonts/Roboto/static/Roboto-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "PeakForm Body";
+    src: url("./fonts/Roboto/static/Roboto-Medium.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "PeakForm Body";
+    src: url("./fonts/Roboto/static/Roboto-Bold.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    --color-primary: #ff5722;
+    --color-secondary: #0d0d0d;
+    --color-accent: #ffffff;
+    --color-background: #0d0d0d;
+    --color-surface: #171717;
+    --color-surface-soft: #212121;
+    --color-border: rgba(255, 87, 34, 0.2);
+    --color-text: #f2f2f2;
+    --color-text-muted: rgba(255, 255, 255, 0.72);
+
+    --font-heading: "PeakForm Heading", Arial, sans-serif;
+    --font-body: "PeakForm Body", Arial, sans-serif;
+
+    --container-width: min(1120px, calc(100% - 2rem));
+    --section-spacing: clamp(4rem, 8vw, 7rem);
+    --radius-xs: 2px;
+}
+
+* {
+    box-sizing: border-box;
+    outline: none;
+    scroll-behavior: smooth;
+}
+
+img,
+button,
+iframe,
+a {
+    user-select: none;
+}
+
+
+html {
+    background-color: var(--color-background);
+}
+
+body {
+    margin: 0;
+    background-color: var(--color-background);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    letter-spacing: 0.01em;
+    text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--color-primary);
+    font-family: var(--font-heading);
+    font-weight: 600;
+    line-height: 1.1;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.faq-panel {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    padding-bottom: 0;
+    transition: max-height 0.35s ease, opacity 0.25s ease, padding-bottom 0.35s ease;
+    will-change: max-height, opacity;
+}
+
+.faq-panel.is-open {
+    opacity: 1;
+    padding-bottom: 1.5rem;
+}
+
+.faq-icon {
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.peakform-theme {
+    background:
+        radial-gradient(circle at top center, rgba(255, 87, 34, 0.14), transparent 28%),
+        #0d0d0d;
+}
+
+.peakform-theme section,
+.peakform-theme footer {
+    border-color: var(--color-border) !important;
+}
+
+.peakform-theme section {
+    background-color: transparent !important;
+}
+
+.peakform-theme .bg-white,
+.peakform-theme article,
+.peakform-theme #countdown-timer > div,
+.peakform-theme .faq-item,
+.peakform-theme #email-gate > .relative {
+    background-color: var(--color-surface) !important;
+}
+
+.peakform-theme .bg-\[var\(--color-surface\)\] {
+    background-color: var(--color-surface-soft) !important;
+}
+
+.peakform-theme .text-\[var\(--color-primary\)\],
+.peakform-theme svg,
+.peakform-theme .faq-icon {
+    color: var(--color-primary) !important;
+}
+
+.peakform-theme .text-\[var\(--color-text-muted\)\],
+.peakform-theme #email-gate-status {
+    color: var(--color-text-muted) !important;
+}
+
+.peakform-theme .text-\[var\(--color-accent\)\] {
+    color: rgba(255, 255, 255, 0.82) !important;
+}
+
+.peakform-theme .inline-flex.min-w-\[240px\],
+.peakform-theme #email-gate-form button {
+    background-color: var(--color-primary) !important;
+    color: #ffffff !important;
+    border: 1px solid var(--color-primary) !important;
+    box-shadow: inset 0 -4px 0 rgba(0, 0, 0, 0.18);
+}
+
+.peakform-theme .inline-flex.min-w-\[240px\]:hover,
+.peakform-theme #email-gate-form button:hover {
+    background-color: #ff6a3a !important;
+}
+
+.peakform-theme .product-link {
+    border-color: rgba(255, 87, 34, 0.4) !important;
+    color: #ffffff !important;
+}
+
+.peakform-theme .product-link:hover,
+.peakform-theme #email-gate-close:hover {
+    background-color: rgba(255, 87, 34, 0.08) !important;
+}
+
+.peakform-theme #email-gate {
+    background-color: rgba(0, 0, 0, 0.78) !important;
+}
+
+.peakform-theme footer {
+    background-color: #090909 !important;
+}
