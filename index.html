@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>5 Website</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f4f4f4;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+        }
+
+        .grid-container {
+            width: 100%;
+            max-width: 1200px;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .box {
+            background: white;
+            border-radius: 14px;
+            padding: 50px 20px;
+            text-align: center;
+            text-decoration: none;
+            color: #111;
+            font-size: 20px;
+            font-weight: bold;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: 0.3s ease;
+        }
+
+        .box:hover {
+            transform: translateY(-5px);
+            background: #111;
+            color: white;
+        }
+
+        /* Tablet */
+        @media (max-width: 900px) {
+            .grid-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Mobile */
+        @media (max-width: 600px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+
+            .box {
+                padding: 40px 20px;
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="grid-container">
+
+        <a href="./APEX/index.html" class="box" target="_blank">
+            Apex Research Labs
+        </a>
+
+        <a href="#" class="box" target="_blank">
+            Vanta Bio
+        </a>
+
+        <a href="#" class="box" target="_blank">
+            PureLine Peptides
+        </a>
+
+        <a href="#" class="box" target="_blank">
+            PeakForm Compounds
+        </a>
+
+        <a href="#" class="box" target="_blank">
+            Helix Research Co.
+        </a>
+
+    </div>
+
+</body>
+
+</html>
